@@ -5,30 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Юрасов Роман">
   <title>CV — Юрасов Роман</title>
+
+  <!-- Спосіб 1: зовнішня таблиця стилів (основна частина правил) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Спосіб 2: внутрішня таблиця стилів -->
+  <style>
+    .highlight {
+      color: var(--color-primary-dark);
+      font-weight: 600;
+      background-color: #fef3c7;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Юрасов Роман</h1>
-    <p>Junior frontend-розробник, студент НУ «Львівська політехніка»</p>
+  <header id="page-header">
+    <div>
+      <h1>Юрасов Роман</h1>
+      <p class="subtitle">Junior frontend-розробник, студент НУ «Львівська політехніка»</p>
+    </div>
+    <!-- Спосіб 3: вбудований (inline) стиль -->
+    <p style="margin: 0; padding: 8px 16px; border: 2px solid #ffffff; border-radius: 999px; font-weight: 600;">
+      Відкритий до стажування
+    </p>
   </header>
 
-  <main>
-    <section>
+  <main id="content">
+    <section id="about" class="card">
       <h2>Про себе</h2>
       <p>
         Студент третього курсу Національного університету «Львівська політехніка».
-        Цікавлюся веброзробкою та кібербезпекою. Вмію верстати семантичні сторінки
+        Цікавлюся <span class="highlight">веброзробкою</span> та
+        <span class="highlight">кібербезпекою</span>. Вмію верстати семантичні сторінки
         на HTML, працювати з Git та створювати інтерфейси на React. Відповідально
         ставлюся до командної роботи, швидко навчаюся та люблю доводити проєкти до кінця.
       </p>
     </section>
 
-    <section>
+    <section id="experience" class="card">
       <h2>Досвід роботи</h2>
 
-      <article>
+      <article class="job">
         <h3>Junior frontend-розробник (стажування)</h3>
-        <p>Локальна IT-компанія, Львів, 2025 – 2026</p>
+        <p class="meta">Локальна IT-компанія, Львів, 2025 – 2026</p>
         <ul>
           <li>Верстав адаптивні сторінки за макетами з Figma.</li>
           <li>Створював компоненти інтерфейсу на React для внутрішнього сервісу.</li>
@@ -37,44 +58,47 @@
         </ul>
       </article>
 
-      <article>
+      <article class="job">
         <h3>Фрилансер, верстальник</h3>
-        <p>Віддалено, 2024 – 2025</p>
+        <p class="meta">Віддалено, 2024 – 2025</p>
         <ul>
           <li>Зробив два сайти-візитки для малого бізнесу.</li>
           <li>Налаштував публікацію сайтів та обмін файлами з замовниками.</li>
         </ul>
       </article>
 
-      <article>
+      <article class="job">
         <h3>Навчальні проєкти</h3>
         <ul>
           <li>Резюме на HTML та React (лабораторна робота №2, 2026).</li>
+          <li>Стилізація резюме за допомогою CSS і Tailwind CSS (лабораторна робота №3, 2026).</li>
           <li>Консольний застосунок для керування паролями (курсовий проєкт).</li>
         </ul>
       </article>
     </section>
 
-    <section>
+    <section id="education" class="card">
       <h2>Освіта</h2>
       <p><strong>Національний університет «Львівська політехніка»</strong></p>
       <p>Спеціальність: Кібербезпека</p>
-      <p>Бакалаврат, 2024 – донині</p>
+      <p class="meta">Бакалаврат, 2024 – донині</p>
       <p>
         Університет:
         <a href="https://lpnu.ua" target="_blank">lpnu.ua</a>
       </p>
     </section>
 
-    <section>
+    <section id="skills" class="card">
       <h2>Навички</h2>
       <h3>Технічні</h3>
-      <ul>
-        <li>HTML5 та семантична розмітка</li>
-        <li>React, Vite, JSX</li>
-        <li>Git та GitHub</li>
-        <li>Основи JavaScript</li>
-        <li>Основи мережевої безпеки</li>
+      <ul class="tags">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>React</li>
+        <li>Vite</li>
+        <li>Git / GitHub</li>
+        <li>JavaScript</li>
+        <li>Мережева безпека</li>
       </ul>
       <h3>Особисті</h3>
       <ul>
@@ -84,7 +108,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="languages" class="card">
       <h2>Мови</h2>
       <ol>
         <li>Українська: рідна</li>
@@ -93,11 +117,11 @@
     </section>
   </main>
 
-  <footer>
+  <footer id="page-footer">
     <h2>Контакти</h2>
     <ul>
-      <li>Email: <a href="mailto:roman.yurasov@example.com">roman.yurasov@example.com</a></li>
-      <li>GitHub: <a href="https://github.com/" target="_blank">github.com/твій-нікнейм</a></li>
+      <li><a href="mailto:roman.yurasov.kb.2025@lpnu.ua">roman.yurasov.kb.2025@lpnu.ua</a></li>
+      <li><a href="https://github.com/romanyurasovkb2025-ui" target="_blank">github.com/romanyurasovkb2025-ui</a></li>
       <li>Місто: Львів</li>
     </ul>
     <p>© 2026 Юрасов Роман</p>
