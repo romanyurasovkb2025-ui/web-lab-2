@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лабораторна №4 — Частина 1 (варіант 24)</title>
+  <style>
+    :root { --bg:#f1f5f9; --fg:#1e293b; --card:#fff; --muted:#64748b; --accent:#2650d9; }
+    body.dark { --bg:#020617; --fg:#e2e8f0; --card:#1e293b; --muted:#94a3b8; --accent:#60a5fa; }
+    [hidden] { display:none !important; }
+    body { margin:0; font-family: Georgia, serif; background:var(--bg); color:var(--fg); }
+    header { padding:24px; background:linear-gradient(135deg,#142661,#3b6cf6); color:#fff; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+    main { max-width:800px; margin:24px auto; padding:0 16px; }
+    section { background:var(--card); border-radius:12px; padding:20px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+    .card { border-left:4px solid var(--accent); padding:12px; margin:10px 0; background:rgba(128,128,128,.08); border-radius:8px; }
+    .muted { color:var(--muted); font-size:14px; }
+    button { cursor:pointer; padding:8px 14px; border-radius:8px; border:1px solid var(--accent); background:var(--accent); color:#fff; font-size:14px; }
+    .ghost { background:transparent; color:inherit; border-color:currentColor; }
+    label { display:block; margin:10px 0 4px; font-size:14px; }
+    input, textarea { width:100%; box-sizing:border-box; padding:8px; border-radius:6px; border:1px solid #94a3b8; font:inherit; background:#fff; color:#0f172a; }
+    .overlay { position:fixed; inset:0; background:rgba(15,23,42,.6); display:flex; align-items:center; justify-content:center; padding:16px; }
+    .modal { background:var(--card); color:var(--fg); border-radius:12px; padding:20px; width:100%; max-width:420px; }
+    footer { background:#0f172a; color:#cbd5e1; padding:24px; text-align:center; font-size:13px; }
+    footer ul { list-style:none; padding:12px; background:#1e293b; border-radius:8px; text-align:left; word-break:break-all; }
+    footer .key { color:#fbbf24; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Юрасов Роман</h1>
+    <button id="theme-toggle" class="ghost">🌙 Ніч</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>Відгуки (варіант 24)</h2>
+      <div id="reviews" class="muted">Завантаження відгуків…</div>
+    </section>
+  </main>
+
+  <div id="contact-modal" class="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+      <h2 id="contact-title">Зворотний зв'язок</h2>
+      <form id="contact-form" method="POST">
+        <label for="name">Ім'я</label>
+        <input id="name" name="name" type="text" required />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+        <label for="phone">Номер телефону</label>
+        <input id="phone" name="phone" type="tel" />
+        <label for="message">Повідомлення</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <p><button type="submit">Надіслати</button></p>
+      </form>
+      <button id="close-modal" class="ghost" type="button">Закрити</button>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2026 Юрасов Роман</div>
+    <h3>Інформація з localStorage</h3>
+    <ul id="storage-list"></ul>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
